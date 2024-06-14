@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./font/font-awesome-pro-v6-6.2.0/css/all.min.css"/>
+    <script src="jquery/jquery-3.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+          integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/toast-message.css">
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <div class="header-middle">
+        <div class="container">
+            <div class="header-middle-left">
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="./img/logo.png" alt="" class="header-logo-img">
+                    </a>
+                </div>
+            </div>
+            <div class="header-middle-right">
+                <ul class="header-middle-right-list">
+                    <li class="header-middle-right-item ">
+                        <a href="login.html" id="siugnUp">Đăng nhập</a>
+                    </li>
+
+                    <li class="header-middle-right-item ">
+                        <a href="register.html" id="login">
+                            Đăng kí
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<main class="main-wrapper">
+    <div class="container" id="trangchu">
+        <div class="home-slider">
+            <img src="./img/banner-3.png" alt="" >
+            <div class="login">
+                <p id="title-dangnhap">Đăng kí</p>
+                <br>
+                <input type="text" id="fullName" placeholder="Họ và tên..">
+                <p id="notice-fullName" class="title-register">
+
+                </p>
+                <input type="text" id="username" placeholder="Tên đăng nhập..">
+                <p id="notice-username" class="title-register">
+
+                </p>
+
+                <input type="text" id="phone" placeholder="Số điện thoại..">
+                <p id="notice-phone" class="title-register">
+
+                </p>
+
+                <input type="text" id="password"  placeholder="Mật khẩu..">
+                <p id="notice-pass" class="title-register">
+
+                </p>
+                <input type="text" id="repass"  placeholder="Nhập lại mật khẩu khẩu..">
+
+                <p id="notice-repass" class="title-register">
+
+                </p>
+
+                <button onclick="register()"  >
+                    Đăng kí
+                </button>
+                <br>
+
+                <hr>
+
+                <br>
+                <div style="text-align: center">
+                    <p id="dangkingay">Bạn đã có tài khoản?
+                        <a href="login.html" id="dangki">Đăng nhập ngay</a>
+
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+
+
+
+
+
+<div id="toast"></div>
+
+<footer class="footer">
+    <div class="container">
+
+    </div>
+    <div class="widget-area">
+        <div class="container">
+            <div class="widget-row">
+                <div class="widget-row-col-1">
+                    <h3 class="widget-title">Về chúng tôi</h3>
+                    <div class="widget-row-col-content">
+                        <p>Foodstorelà thương hiệu được thành lập vào năm 2022 với tiêu chí đặt chất lượng sản phẩm lên hàng đầu.</p>
+                    </div>
+                    <div class="widget-social">
+                        <div class="widget-social-item">
+                            <a href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                        <div class="widget-social-item">
+                            <a href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="widget-social-item">
+                            <a href="">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <div class="widget-social-item">
+                            <a href="">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-row-col">
+                    <h3 class="widget-title">Liên kết</h3>
+                    <ul class="widget-contact">
+                        <li class="widget-contact-item">
+                            <a href="">
+                                <i class="fa-regular fa-arrow-right"></i>
+                                <span>Về chúng tôi</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">
+                                <i class="fa-regular fa-arrow-right"></i>
+                                <span>Thực đơn</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">
+                                <i class="fa-regular fa-arrow-right"></i>
+                                <span>Điều khoản</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">
+                                <i class="fa-regular fa-arrow-right"></i>
+                                <span>Liên hệ</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">
+                                <i class="fa-regular fa-arrow-right"></i>
+                                <span>Tin tức</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="widget-row-col">
+                    <h3 class="widget-title">Thực đơn</h3>
+                    <ul class="widget-contact">
+                        <li class="widget-contact-item">
+                            <a href="">
+                                <i class="fa-regular fa-arrow-right"></i>
+                                <span>Điểm tâm</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">
+                                <i class="fa-regular fa-arrow-right"></i>
+                                <span>Món chay</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">
+                                <i class="fa-regular fa-arrow-right"></i>
+                                <span>Món mặn</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">
+                                <i class="fa-regular fa-arrow-right"></i>
+                                <span>Nước uống</span>
+                            </a>
+                        </li>
+                        <li class="widget-contact-item">
+                            <a href="">
+                                <i class="fa-regular fa-arrow-right"></i>
+                                <span>Tráng miệng</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/toast-msg.js"></script>
+<script src="js/account.js"></script>
+</body>
+</html>

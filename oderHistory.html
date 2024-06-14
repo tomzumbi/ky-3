@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oke</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+          integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+          crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/toast-message.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="stylesheet" href="./font/font-awesome-pro-v6-6.2.0/css/all.min.css"/>
+</head>
+<body>
+<header>
+    <div class="header-middle">
+        <div class="container">
+            <div class="header-middle-left">
+                <div class="header-logo">
+                    <a href="index.html">
+                        <img src="./img/logo.png" alt="" class="header-logo-img">
+                    </a>
+                </div>
+            </div>
+            <div class="header-middle-center">
+                <form action="" class="form-search">
+                    <span class="search-btn"><i class="fa-light fa-magnifying-glass"></i></span>
+                    <input type="text" class="form-search-input" placeholder="Tìm kiếm món ăn...">
+                    <button class="filter-btn"><i class="fa-light fa-filter-list"></i><span>Lọc</span></button>
+                </form>
+            </div>
+            <div class="header-middle-right">
+                <ul class="header-middle-right-list">
+                    <li class="header-middle-right-item dnone open" onclick="openSearchMb()">
+                        <div class="cart-icon-menu">
+                            <i class="fa-light fa-magnifying-glass"></i>
+                        </div>
+                    </li>
+                    <li class="header-middle-right-item close" onclick="closeSearchMb()">
+                        <div class="cart-icon-menu">
+                            <i class="fa-light fa-circle-xmark"></i>
+                        </div>
+                    </li>
+                    <li class="header-middle-right-item dropdown open" id="user">
+                        <i class="fa-light fa-user"></i>
+                        <div class="auth-container">
+                            <span class="text-dndk">Đăng nhập / Đăng ký</span>
+                            <span class="text-tk">Tài khoản <i class="fa-sharp fa-solid fa-caret-down"></i></span>
+                        </div>
+                        <ul class="header-middle-right-menu">
+                            <li><a id="login" href="login.html" target="_blank"><i
+                                    class="fa-light fa-right-to-bracket"></i> Đăng nhập</a></li>
+
+                            <li><a id="signup" href="register.html"><i class="fa-light fa-user-plus"></i> Đăng ký</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header-middle-right-item open" onclick="carts()">
+                        <div class="cart-icon-menu">
+                            <i class="fa-light fa-basket-shopping"></i>
+                            <span class="count-product-cart" id="cart-number">0</span>
+                        </div>
+                        <span>Giỏ hàng</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<nav class="header-bottom">
+    <div class="container">
+        <ul class="menu-list">
+            <li class="menu-list-item"><a href="index.html" class="menu-link">Trang chủ</a></li>
+            <li class="menu-list-item" onclick="showCategory('Món chay')"><a href="javascript:;" class="menu-link">Món
+                chay</a></li>
+            <li class="menu-list-item" onclick="showCategory('Món mặn')"><a href="javascript:;" class="menu-link">Món
+                mặn</a></li>
+            <li class="menu-list-item" onclick="showCategory('Món lẩu')"><a href="javascript:;" class="menu-link">Món
+                lẩu</a></li>
+            <li class="menu-list-item" onclick="showCategory('Món ăn vặt')"><a href="javascript:;" class="menu-link">Món
+                ăn vặt</a></li>
+            <li class="menu-list-item" onclick="showCategory('Món tráng miệng')"><a href="javascript:;"
+                                                                                    class="menu-link">Món tráng
+                miệng</a></li>
+            <li class="menu-list-item" onclick="showCategory('Nước uống')"><a href="javascript:;" class="menu-link">Nước
+                uống</a></li>
+            <li class="menu-list-item" onclick="showCategory('Món khác')"><a href="javascript:;" class="menu-link">Món
+                khác</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="advanced-search">
+    <div class="container">
+        <div class="advanced-search-category">
+            <span>Phân loại </span>
+            <select name="" id="advanced-search-category-select" onchange="searchProducts()">
+                <option>Tất cả</option>
+                <option>Món chay</option>
+                <option>Món mặn</option>
+                <option>Món lẩu</option>
+                <option>Món ăn vặt</option>
+                <option>Món tráng miệng</option>
+                <option>Nước uống</option>
+            </select>
+        </div>
+        <div class="advanced-search-price">
+            <span>Giá từ</span>
+            <input type="number" placeholder="tối thiểu" id="min-price" onchange="searchProducts()">
+            <span>đến</span>
+            <input type="number" placeholder="tối đa" id="max-price" onchange="searchProducts()">
+            <button id="advanced-search-price-btn"><i class="fa-light fa-magnifying-glass-dollar"></i></button>
+        </div>
+        <div class="advanced-search-control">
+            <button id="sort-ascending"><i class="fa-regular fa-arrow-up-short-wide"></i>
+            </button>
+            <button id="sort-descending" ><i class="fa-regular fa-arrow-down-wide-short"></i>
+            </button>
+            <button id="reset-search" ><i class="fa-light fa-arrow-rotate-right"></i>
+            </button>
+            <button><i class="fa-light fa-xmark"></i></button>
+        </div>
+    </div>
+</div>
+
+<main class="main-wrapper">
+
+    <div class="container" id="order-history">
+        <div class="main-account">
+            <div class="main-account-header">
+                <h3>Quản lý đơn hàng của bạn</h3>
+                <p>Xem chi tiết, trạng thái của những đơn hàng đã đặt.</p>
+            </div>
+            <div class="main-account-body">
+                <div class="order-history-section">
+                </div>
+            </div>
+            <div>
+                <p style="float: left; color: var(--red);font-weight: 500; font-size: 20px">
+                    Tổng tiền:
+                </p>
+                <p style="float: right; color: var(--red);font-weight: 500; font-size: 20px" id="totalOder">
+                    0 ₫
+                </p>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+<div id="toast"></div>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-top-content">
+                <div class="footer-top-img">
+                    <img src="./assets/img/vy-food.png" alt="">
+                </div>
+                <div class="footer-top-subbox">
+                    <div class="footer-top-subs">
+                        <h2 class="footer-top-subs-title">Đăng ký nhận tin</h2>
+                        <p class="footer-top-subs-text">Nhận thông tin mới nhất từ chúng tôi</p>
+                    </div>
+                    <form class="form-ground">
+                        <input type="email" class="form-ground-input" placeholder="Nhập email của bạn">
+                        <button class="form-ground-btn">
+                            <span>ĐĂNG KÝ</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+
+<script src="js/toast-msg.js"></script>
+<script src="js/app.js"></script>
+<script src="js/product.js"></script>
+<script src="js/oder.js"></script>
+<script src="js/account.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
